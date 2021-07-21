@@ -13,4 +13,9 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wagtail_bootstrap_blog.settings.dev")
 
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
+User.objects.create_superuser('x', 'x')
+
 application = get_wsgi_application()
